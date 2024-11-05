@@ -15,10 +15,9 @@ keywords = ["encoding", "decoding", "bindings", "nvidia", "cuda"]
 
 [package.metadata.docs.rs]
 cargo-args = ["-Zunstable-options", "-Zrustdoc-scrape-examples"]
-features = ["ci-check"]
 
 [dependencies]
-cudarc = "0.9.14"
+cudarc = {version="0.12.0", features=["cuda-12040"]}
 lazy_static = "1.4.0"
 
 [dev-dependencies]
@@ -26,4 +25,3 @@ vulkano = "0.33.0"
 
 [features]
 default = []
-ci-check = ["cudarc/ci-check"]
