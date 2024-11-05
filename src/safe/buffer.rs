@@ -438,6 +438,12 @@ impl BufferLock<'_, '_> {
         data.as_ptr()
             .copy_to(self.data_ptr.cast::<u8>(), data.len());
     }
+
+    /// Number of bytes between the start of consecutive rows in the buffer.
+    #[must_use]
+    pub fn pitch(&self) -> u32 {
+        self.pitch
+    }
 }
 
 impl Drop for BufferLock<'_, '_> {
